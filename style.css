@@ -1,0 +1,30 @@
+body {
+  background-color: #222831;
+  text-align: center;
+  color: #eeeeee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sketch {
+  background-color: #eeeeee;
+  width: 512px;
+  height: 512px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  width: 6.25%;
+  height: 6.25%;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+}
