@@ -2,6 +2,7 @@ body {
   background-color: #222831;
   text-align: center;
   color: #eeeeee;
+  box-sizing: border-box;
 }
 
 .container {
@@ -22,9 +23,6 @@ body {
 }
 
 .pixel {
-  width: 6.25%;
-  height: 6.25%;
-  border: 1px solid black;
-  margin: 0;
-  padding: 0;
+  width: 32px;
+  height: 32px;
 }
