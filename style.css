@@ -2,7 +2,6 @@ body {
   background-color: #222831;
   text-align: center;
   color: #eeeeee;
-  box-sizing: border-box;
 }
 
 .container {
@@ -14,15 +13,11 @@ body {
 
 #sketch {
   background-color: #eeeeee;
-  width: 512px;
-  height: 512px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  display: grid;
 }
 
 .pixel {
-  width: 32px;
-  height: 32px;
+  user-select: none;
 }
