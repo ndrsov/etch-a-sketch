@@ -1,8 +1,16 @@
 const sketch = document.querySelector("#sketch");
+const resetBtn = document.querySelector("#reset-btn");
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
+
+resetBtn.addEventListener("click", () => {
+  const gridUnits = sketch.childNodes;
+  for (const gridUnit of gridUnits) {
+    gridUnit.style.backgroundColor = "white";
+  }
+});
 
 function setupGrid(size) {
   sketch.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
