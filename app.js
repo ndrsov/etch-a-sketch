@@ -1,15 +1,16 @@
 const sketch = document.querySelector("#sketch");
 const resetBtn = document.querySelector("#reset-btn");
+const userSize = document.querySelector("#size-selector");
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
-resetBtn.addEventListener("click", () => {
-  const gridUnits = sketch.childNodes;
-  for (const gridUnit of gridUnits) {
-    gridUnit.style.backgroundColor = "white";
-  }
+resetBtn.addEventListener("click", reset);
+userSize.addEventListener("change", () => {
+  let gridSize = parseInt(userSize.value);
+  setupGrid(gridSize);
+  reset();
 });
 
 function setupGrid(size) {
@@ -29,6 +30,13 @@ function paint(e) {
     return;
   } else {
     e.target.style.backgroundColor = "black";
+  }
+}
+
+function reset() {
+  const gridUnits = sketch.childNodes;
+  for (const gridUnit of gridUnits) {
+    gridUnit.style.backgroundColor = "white";
   }
 }
 
