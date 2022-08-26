@@ -3,9 +3,12 @@ const resetBtn = document.querySelector("#reset-btn");
 const userSize = document.querySelector("#size-selector");
 const sizeLabel = document.querySelector("#size-label");
 const userColor = document.querySelector("#user-color");
+const eraser = document.querySelector("#eraser-btn");
+const paintBtn = document.querySelector("#paint-btn");
 
 let mouseDown = false;
 let brushColor = "#000000";
+
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
@@ -16,9 +19,14 @@ userSize.addEventListener("change", () => {
   sizeLabel.textContent = `${userSize.value} x ${userSize.value}`;
   reset();
 });
-
 userColor.addEventListener("input", (e) => {
   brushColor = e.target.value;
+});
+eraser.addEventListener("click", (e) => {
+  brushColor = "#ffffff";
+});
+paintBtn.addEventListener("click", (e) => {
+  brushColor = "#000000";
 });
 
 function setupGrid(size) {
