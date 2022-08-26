@@ -1,6 +1,7 @@
 const sketch = document.querySelector("#sketch");
 const resetBtn = document.querySelector("#reset-btn");
 const userSize = document.querySelector("#size-selector");
+const sizeLabel = document.querySelector("#size-label");
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -10,6 +11,7 @@ resetBtn.addEventListener("click", reset);
 userSize.addEventListener("change", () => {
   let gridSize = parseInt(userSize.value);
   setupGrid(gridSize);
+  sizeLabel.textContent = `${userSize.value} x ${userSize.value}`;
   reset();
 });
 
@@ -41,5 +43,5 @@ function reset() {
 }
 
 window.onload = () => {
-  setupGrid(32);
+  setupGrid(16);
 };
