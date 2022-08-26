@@ -2,8 +2,10 @@ const sketch = document.querySelector("#sketch");
 const resetBtn = document.querySelector("#reset-btn");
 const userSize = document.querySelector("#size-selector");
 const sizeLabel = document.querySelector("#size-label");
+const userColor = document.querySelector("#user-color");
 
 let mouseDown = false;
+let brushColor = "#000000";
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
@@ -13,6 +15,10 @@ userSize.addEventListener("change", () => {
   setupGrid(gridSize);
   sizeLabel.textContent = `${userSize.value} x ${userSize.value}`;
   reset();
+});
+
+userColor.addEventListener("input", (e) => {
+  brushColor = e.target.value;
 });
 
 function setupGrid(size) {
@@ -31,7 +37,7 @@ function paint(e) {
   if (e.type === "mouseover" && !mouseDown) {
     return;
   } else {
-    e.target.style.backgroundColor = "black";
+    e.target.style.backgroundColor = brushColor;
   }
 }
 
