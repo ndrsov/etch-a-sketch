@@ -4,10 +4,13 @@ const userSize = document.querySelector("#size-selector");
 const sizeLabel = document.querySelector("#size-label");
 const userColor = document.querySelector("#user-color");
 const eraser = document.querySelector("#eraser-btn");
-const paintBtn = document.querySelector("#paint-btn");
+const penBtn = document.querySelector("#pen-btn");
+const colorBtn = document.querySelector("#color-btn");
+const rainbowBtn = document.querySelector("#rainbow-btn");
 
 let mouseDown = false;
 let brushColor = "#000000";
+let paintMode = "PEN";
 
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -22,11 +25,17 @@ userSize.addEventListener("change", () => {
 userColor.addEventListener("input", (e) => {
   brushColor = e.target.value;
 });
-eraser.addEventListener("click", (e) => {
-  brushColor = "#ffffff";
+penBtn.addEventListener("click", (e) => {
+  paintMode = "PEN";
 });
-paintBtn.addEventListener("click", (e) => {
-  brushColor = "#000000";
+colorBtn.addEventListener("click", (e) => {
+  paintMode = "COLOR";
+});
+eraser.addEventListener("click", (e) => {
+  paintMode = "ERASER";
+});
+rainbowBtn.addEventListener("click", () => {
+  paintMode = "RAINBOW";
 });
 
 function setupGrid(size) {
@@ -44,7 +53,20 @@ function setupGrid(size) {
 function paint(e) {
   if (e.type === "mouseover" && !mouseDown) {
     return;
-  } else {
+  } else if (paintMode === "PEN") {
+    brushColor = "#000000";
+    e.target.style.backgroundColor = brushColor;
+  } else if (paintMode === "COLOR") {
+    brushColor = userColor.value;
+    e.target.style.backgroundColor = brushColor;
+  } else if (paintMode === "ERASER") {
+    brushColor = "#FFFFFF";
+    e.target.style.backgroundColor = brushColor;
+  } else if (paintMode === "RAINBOW") {
+    const randomR = Math.floor(Math.random() * 256);
+    const randomG = Math.floor(Math.random() * 256);
+    const randomB = Math.floor(Math.random() * 256);
+    brushColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     e.target.style.backgroundColor = brushColor;
   }
 }
