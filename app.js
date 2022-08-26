@@ -33,5 +33,5 @@ function paint(e) {
 }
 
 window.onload = () => {
-  setupGrid(16);
+  setupGrid(32);
 };
