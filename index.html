@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,11 +20,13 @@
       <div id="sketch"></div>
     </div>
     <div class="controls">
-      <button id="pen-btn">Pen Mode</button>
-      <button id="color-btn">Color Mode</button>
-      <button id="rainbow-btn">Rainbow Mode</button>
-      <button id="eraser-btn">Eraser</button>
-      <button id="reset-btn">Clear entire canvas</button>
+      <button id="pen-btn"><i class="fa-solid fa-pencil"></i></button>
+      <button id="color-btn"><i class="fa-solid fa-paintbrush"></i></button>
+      <label for="user-color">Color</label>
+      <input type="color" name="color-picker" id="user-color" />
+      <button id="rainbow-btn"><i class="fa-solid fa-rainbow"></i></button>
+      <button id="eraser-btn"><i class="fa-solid fa-eraser"></i></button>
+      <button id="reset-btn"><i class="fa-solid fa-trash"></i></button>
       <h3>Choose size of canvas</h3>
       <input
         type="range"
@@ -28,8 +37,6 @@
         id="size-selector"
       />
       <label for="size-selector" id="size-label">16 x 16</label>
-      <label for="user-color">Color</label>
-      <input type="color" name="color-picker" id="user-color" />
     </div>
     <script src="app.js"></script>
   </body>
