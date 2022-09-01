@@ -27,15 +27,19 @@ userColor.addEventListener("input", (e) => {
 });
 penBtn.addEventListener("click", (e) => {
   paintMode = "PEN";
+  userColor.setAttribute("disabled", "");
 });
 colorBtn.addEventListener("click", (e) => {
   paintMode = "COLOR";
+  userColor.removeAttribute("disabled");
 });
 eraser.addEventListener("click", (e) => {
   paintMode = "ERASER";
+  userColor.setAttribute("disabled", "");
 });
 rainbowBtn.addEventListener("click", () => {
   paintMode = "RAINBOW";
+  userColor.setAttribute("disabled", "");
 });
 
 function setupGrid(size) {
