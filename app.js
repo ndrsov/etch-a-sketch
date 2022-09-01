@@ -28,18 +28,34 @@ userColor.addEventListener("input", (e) => {
 penBtn.addEventListener("click", (e) => {
   paintMode = "PEN";
   userColor.setAttribute("disabled", "");
+  penBtn.classList.add("active");
+  colorBtn.classList.remove("active");
+  rainbowBtn.classList.remove("active");
+  eraser.classList.remove("active");
 });
 colorBtn.addEventListener("click", (e) => {
   paintMode = "COLOR";
   userColor.removeAttribute("disabled");
+  penBtn.classList.remove("active");
+  colorBtn.classList.add("active");
+  rainbowBtn.classList.remove("active");
+  eraser.classList.remove("active");
 });
 eraser.addEventListener("click", (e) => {
   paintMode = "ERASER";
   userColor.setAttribute("disabled", "");
+  penBtn.classList.remove("active");
+  colorBtn.classList.remove("active");
+  rainbowBtn.classList.remove("active");
+  eraser.classList.add("active");
 });
 rainbowBtn.addEventListener("click", () => {
   paintMode = "RAINBOW";
   userColor.setAttribute("disabled", "");
+  penBtn.classList.remove("active");
+  colorBtn.classList.remove("active");
+  rainbowBtn.classList.add("active");
+  eraser.classList.remove("active");
 });
 
 function setupGrid(size) {
