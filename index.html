@@ -18,14 +18,27 @@
     <h1>Etch-A-Sketch</h1>
     <div class="tools-sketch">
       <div class="controls">
-        <button id="pen-btn"><i class="fa-solid fa-pencil"></i></button>
-        <button id="color-btn">
+        <button class="button" id="pen-btn">
+          <i class="fa-solid fa-pencil"></i>
+          <span>Pen</span>
+        </button>
+        <button class="button" id="color-btn">
           <i class="fa-solid fa-paintbrush"></i>
+          <span>Brush</span>
         </button>
         <input type="color" name="color-picker" id="user-color" />
-        <button id="rainbow-btn"><i class="fa-solid fa-rainbow"></i></button>
-        <button id="eraser-btn"><i class="fa-solid fa-eraser"></i></button>
-        <button id="reset-btn"><i class="fa-solid fa-trash"></i></button>
+        <button class="button" id="rainbow-btn">
+          <i class="fa-solid fa-rainbow"></i>
+          <span>Rainbow</span>
+        </button>
+        <button class="button" id="eraser-btn">
+          <i class="fa-solid fa-eraser"></i>
+          <span>Eraser</span>
+        </button>
+        <button class="button" id="reset-btn">
+          <i class="fa-solid fa-trash"></i>
+          <span>Clear canvas</span>
+        </button>
       </div>
       <div id="sketch"></div>
     </div>
